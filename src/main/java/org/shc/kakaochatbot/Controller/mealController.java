@@ -24,7 +24,7 @@ public class mealController {
         LocalDate date = LocalDate.now(ZoneId.of("Asia/Seoul"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         String dateNow = date.format(formatter);
-        HashMap<String, ArrayList<String>> getMealData = getMeal.getMeal(key, cityCode, schoolCode, "20240531");
+        HashMap<String, ArrayList<String>> getMealData = getMeal.getMeal(key, cityCode, schoolCode, dateNow);
 
         mealData.setMealMenuList(String.join(", ", getMealData.get("menu_list")));
         mealData.setMealAllergyList(String.join(", ", getMealData.get("allergy_list")));
