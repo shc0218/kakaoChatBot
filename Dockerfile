@@ -1,3 +1,4 @@
 FROM azul/zulu-openjdk:22
 VOLUME /tmp
-ENTRYPOINT ["java","-jar","target/app.jar"]
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
